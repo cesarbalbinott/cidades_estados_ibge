@@ -8,6 +8,10 @@ class CidadesEstadosIbge {
     return getUfs().where((e) => e.sigla == uf).toList()[0].ibge;
   }
 
+  int? ibgePorCidadeUf(String? cidade, String? uf) {
+    return getCidades().where((e) => e.nome == cidade && e.siglaUF == uf).toList()[0].ibge;
+  }
+
   List<CidadeModel> cidadesPorUf(String uf) =>
       getCidades().where((e) => e.estadoIbge == ibgePorUf(uf)).toList();
 

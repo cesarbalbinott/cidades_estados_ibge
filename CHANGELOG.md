@@ -13,3 +13,7 @@
 ## [0.0.7] - TODO: Add release date.
 
 * Adicionado a sigla da UF
+
+## [0.0.8] - TODO: Add release date.
+
+* Adicionado busca de IBGE por cidade e UF

@@ -1,6 +1,6 @@
 name: cidades_estados_ibge
 description: Pacote com todas as cidades e estados brasileiros com código IBGE - funciona offline.
-version: 0.0.7
+version: 0.0.8
 homepage: https://www.linkedin.com/in/cesarbalbinott
 
 environment:
