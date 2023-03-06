@@ -9,7 +9,13 @@ class CidadesEstadosIbge {
   }
 
   int? ibgePorCidadeUf(String? cidade, String? uf) {
-    return getCidades().where((e) => e.nome == cidade && e.siglaUF == uf).toList()[0].ibge;
+    List<CidadeModel> cidadesUF = cidadesPorUf(uf!);
+    CidadeModel cidadeModel = cidadesUF
+        .where((e) => removeAccents(e.nome.toString().toLowerCase())
+            .contains(removeAccents(cidade.toString().toLowerCase())))
+        .toList()[0];
+
+    return cidadeModel.ibge;
   }
 
   List<CidadeModel> cidadesPorUf(String uf) =>
@@ -30,6 +36,11 @@ class CidadesEstadosIbge {
       .where((e) => removeAccents(e.nome.toString().toLowerCase())
           .contains(removeAccents(nome.toString().toLowerCase())))
       .toList();
+
+  UfModel buscaUfPorSigla(String? sigla) => getUfs()
+      .where((e) => removeAccents(e.sigla.toString().toLowerCase())
+          .contains(removeAccents(sigla.toString().toLowerCase())))
+      .toList()[0];
 
   String removeAccents(String str) {
     var withAccents =

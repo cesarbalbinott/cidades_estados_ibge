@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
     //print(cidadesEstadosIbge.ufPorIbge(42).toJson());
     //print(json.encode(cidadesEstadosIbge.buscaCidadePorNome("são")));
     //print(json.encode(cidadesEstadosIbge.buscaUfPorNome("São")));
-    print(json.encode(cidadesEstadosIbge.ibgePorCidadeUf("São Paulo", "SP")));
+    print(
+        json.encode(cidadesEstadosIbge.ibgePorCidadeUf("Juíz de Fora", "MG")));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
